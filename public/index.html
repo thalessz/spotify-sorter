@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Playlist Organizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #222222;
+            color:white
+        }
+        h1 {
+            color: #1DB954; /* Cor do Spotify */
+        }
+        #playlists {
+            list-style-type: none;
+            padding: 0;
+        }
+        #playlists li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #playlists li.selected {
+            background-color: #e0f7fa; /* Cor de seleção */
+        }
+    </style>
+</head>
+<body>
+    <h1>Spotify Playlist Organizer</h1>
+    <button id="login">Conectar-se ao Spotify</button>
+    <ul id="playlists"></ul>
+    <button id="organizar" style="display:none;">Organizar Playlist</button>
+
+    <script src="./static/index.js"></script>
+</body>
+</html>

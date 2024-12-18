@@ -1,0 +1,34 @@
+{
+  "name": "spotify-sorter",
+  "version": "1.0.0",
+  "description": "testing spotify api to sort my playlist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thalessz/spotify-sorter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thalessz/spotify-sorter/issues"
+  },
+  "homepage": "https://github.com/thalessz/spotify-sorter#readme",
+  "dependencies": {
+    "@spotify/web-api-ts-sdk": "^1.2.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "inquirer": "^12.2.0",
+    "spotify-web-api-node": "^5.0.2",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/spotify-web-api-node": "^5.0.11",
+    "typescript": "^5.7.2"
+  }
+}

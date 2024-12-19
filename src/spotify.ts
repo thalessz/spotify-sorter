@@ -1,9 +1,9 @@
 import SpotifyWebApi from 'spotify-web-api-node';
 
 export const spotifyApi = new SpotifyWebApi({
-    clientId: process.env.SPOTIFY_CLIENT_ID,
-    clientSecret: process.env.SPOTIFY_SECRET,
-    redirectUri: 'http://localhost:8888/redirect'
+    clientId: 'f19c1c8d60d54b769542eb47e3e897f7',
+    clientSecret: '7d396a1c6a184aef839b2975d3c7b782',
+    redirectUri: 'http://localhost:8888/callback'
 });
 
 interface Playlist {
@@ -31,21 +31,10 @@ const generateRandomString = (length: number): string => {
 };
 
 // Função para autenticar o usuário
-export const spotifyAuth = async (): Promise<void> => {
+export const spotifyAuth = (): string => {
     const scopes = ['playlist-read-private', 'playlist-modify-private', 'playlist-modify-public'];
-    const state = generateRandomString(16);
-    const authUrl = spotifyApi.createAuthorizeURL(scopes, state);
-    console.log('Autorize o aplicativo acessando:', authUrl);
-
-    const code = await new Promise<string>((resolve) => {
-        console.log('Cole o código de autenticação aqui:');
-        process.stdin.once('data', (data) => resolve(data.toString().trim()));
-    });
-    
-    const data = await spotifyApi.authorizationCodeGrant(code);
-    spotifyApi.setAccessToken(data.body['access_token']);
-    spotifyApi.setRefreshToken(data.body['refresh_token']);
-    console.log('Autenticação concluída!');
+    const state = generateRandomString(16); 
+    return spotifyApi.createAuthorizeURL(scopes, state); 
 };
 
 export const getPlaylists = async (): Promise<Playlist[]> => {

@@ -1,29 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Variáveis de Cores */
+:root {
+    --bg-dark: #191414;
+    --bg-light: #f8f9fa;
+    --text-light: white;
+    --text-dark: black;
+    --primary-color: #1DB954; /* Cor do Spotify */
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+/* Estilo do Body */
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    justify-content: flex-start; 
     align-items: center;
-    height: 100vh;
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
 
+/* Estilo do Header */
+header {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+/* Estilos do Container */
 .container {
     text-align: center;
+    flex-grow: 1; 
 }
 
-button {
-    background-color: #1DB954; /* Cor do Spotify */
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+h1 {
+    font-weight: 700;
 }
 
-button:hover {
-    background-color: #1ed760; /* Cor mais clara ao passar o mouse */
+/* Estilos dos Botões Personalizados */
+.btn-custom {
+    background-color: var(--primary-color); 
+    color: var(--text-light);
 }
+
+.btn-custom:hover {
+    background-color: rgba(29, 185, 84, 0.8); 
+}
+
+.btn-outline-custom {
+    border-color: var(--primary-color); 
+    color: var(--primary-color); 
+}
+
+.btn-outline-custom:hover {
+    background-color: rgba(29, 185, 84, 0.2); 
+}
+
+/* Estilo da Imagem */
+.custom-image {
+    width: 35vw;
+    height: auto;
+    padding-bottom: 5vh;
+}
+
+.icon {
+    width: 25px; 
+    margin-right: 10px; 
+ }
+
+/* Media Queries para Responsividade */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 24px; 
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 14px;
+        margin-bottom: 10px; 
+    }
+
+   .custom-image {
+       width: 200px; /* Ajuste para telas menores */
+   }
+}
+

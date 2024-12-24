@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Spotify</title>
-    <link rel="stylesheet" href="./static/styles/login.css">
+    <title>Login - Organify</title>
+    <link rel="icon" href="./static/images/icon.png" type="icon/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/styles/login.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
-<body>
-    <div class="container">
-        <button id="login">Conectar-se ao Spotify</button>
-    </div>
+<body class="bg-dark text-white">
 
-    <script src="./static/scripts/login.js"></script>
+<header class="d-flex justify-content-between align-items-center p-3 bg-dark border-bottom" id="header">
+    <div class="logo">
+        <h1 id="header-title" class="text-light">💿 Organify</h1>
+    </div>
+    <div class="header-right d-flex align-items-center">
+        <button class="btn btn-outline-custom me-3" id="login">Entrar</button>
+        <div class="dropdown me-3">
+            <button id="languageDropdownButton" class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                🇧🇷
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdownButton">
+                <li><a class="dropdown-item" href="#" onclick="changeLanguage('pt')">🇧🇷 Português</a></li>
+                <li><a class="dropdown-item" href="#" onclick="changeLanguage('es')">🇪🇸 Español</a></li>
+                <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">🇺🇸 English</a></li>
+            </ul>
+        </div>
+        <button id="themeToggle" class="btn btn-dark rounded-circle">
+            🌙
+        </button>
+    </div>
+</header>
+
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <div class="text-center mb-4">
+        <img src="./static/images/clear-vinyl.gif" alt="Clear Vinyl" class="img-fluid mb-3 custom-image">
+        <h1 id="connect-text">Conectar-se ao Spotify</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button id="login" class="btn btn-custom btn-lg rounded-pill me-4">
+            <img class="icon" src="./static/images/spotify_logo_white.png" alt="Spotify"> Conectar-se ao Spotify
+        </button>
+        <button id="github" class="btn btn-outline-custom btn-lg rounded-pill">
+            <img class="icon" src="./static/images/github.png" alt="GitHub"> GitHub
+        </button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="./static/scripts/login.js"></script>
+
 </body>
 </html>
